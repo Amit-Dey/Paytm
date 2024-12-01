@@ -39,10 +39,10 @@ const userSchema = new mongose.Schema({
 
 
 // Hash password method
-userSchema.methods.hashPassword = async function () {
+userSchema.methods.hashPassword = async function (NormalPassword) {
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
-    this.password = await bcrypt.hash(this.password, salt);
+    return await bcrypt.hash(NormalPassword, salt);
 };
 
 // Validate password method
