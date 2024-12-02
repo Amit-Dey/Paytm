@@ -51,7 +51,24 @@ userSchema.methods.validatePassword = async function (password) {
 };
 
 
+const AccountsSchema = new mongose.Schema({
+    userId: {
+        type: mongose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    balance: {
+        type: Number,
+        default: 0,
+        min: 0,
+        required: true
+    }
+});
+
+
+
+// Models
 const User = mongose.model('User', userSchema);
+const Accounts = mongose.model('Accounts', AccountsSchema);
 
-
-module.exports = User;
+module.exports = { User, Accounts };
