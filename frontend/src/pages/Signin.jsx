@@ -8,7 +8,7 @@ import TextLevelBtn from '../components/TextLevelBtn'
 const Signin = () => {
   return (
     <div className=" bg-background text-text w-full h-[100vh] flex justify-center items-center">
-      <div className=" bg-secondary w-80 h-fit p-4 rounded-sm drop-shadow-sm">
+      <div className=" bg-secondary w-3/12 h-fit p-6 rounded-sm drop-shadow-sm">
         <Heading level="Sign In" />
         <SubHeading level="Enter your information to create an account" />
         <InputBox level="Email" placeholder="Enter your email" />
